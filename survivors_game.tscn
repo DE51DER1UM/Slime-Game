@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://swcb8q32cvqi"]
+
+[ext_resource type="Script" uid="uid://c1bfau31nfqio" path="res://survivors_game.gd" id="1_l26od"]
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_y3pti"]
+[ext_resource type="PackedScene" uid="uid://vk50tubkjkm1" path="res://pinetree.tscn" id="2_y3pti"]
+[ext_resource type="PackedScene" uid="uid://cwuwf3ya0bg7e" path="res://game_over.tscn" id="4_qqaft"]
+
+[sub_resource type="Curve2D" id="Curve2D_qqaft"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -415, -885, 0, 0, 0, 0, 2350, -892, 0, 0, 0, 0, 2342, 1307, 0, 0, 0, 0, -444, 1336, 0, 0, 0, 0, -415, -885)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=1017357624]
+y_sort_enabled = true
+script = ExtResource("1_l26od")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=808387623]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=89297711]
+offset_right = 1928.0
+offset_bottom = 1072.0
+
+[node name="Player" parent="." unique_id=217721967 instance=ExtResource("1_y3pti")]
+position = Vector2(981, 576)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=497117415]
+position = Vector2(-981, -196)
+curve = SubResource("Curve2D_qqaft")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=302637636]
+unique_name_in_owner = true
+position = Vector2(-415, -885)
+rotation = -0.00253164
+
+[node name="StaticBody2D" parent="." unique_id=1504136900 instance=ExtResource("2_y3pti")]
+position = Vector2(591, 790)
+
+[node name="StaticBody2D2" parent="." unique_id=1381859034 instance=ExtResource("2_y3pti")]
+position = Vector2(312, 236)
+
+[node name="StaticBody2D3" parent="." unique_id=2124049232 instance=ExtResource("2_y3pti")]
+position = Vector2(1210, 932)
+
+[node name="StaticBody2D4" parent="." unique_id=143018986 instance=ExtResource("2_y3pti")]
+position = Vector2(1626, 657)
+
+[node name="StaticBody2D5" parent="." unique_id=1272584211 instance=ExtResource("2_y3pti")]
+position = Vector2(1331, 204)
+
+[node name="StaticBody2D6" parent="." unique_id=2142692859 instance=ExtResource("2_y3pti")]
+position = Vector2(725, 390)
+
+[node name="StaticBody2D7" parent="." unique_id=276126992 instance=ExtResource("2_y3pti")]
+position = Vector2(183, 871)
+
+[node name="StaticBody2D8" parent="." unique_id=207221397 instance=ExtResource("2_y3pti")]
+position = Vector2(1727, 305)
+
+[node name="Timer" type="Timer" parent="." unique_id=1831963426]
+wait_time = 0.5
+autostart = true
+
+[node name="GameOver" parent="." unique_id=1014575362 instance=ExtResource("4_qqaft")]
+visible = false
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
