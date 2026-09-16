@@ -4,12 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_y3pti"]
 [ext_resource type="PackedScene" uid="uid://vk50tubkjkm1" path="res://pinetree.tscn" id="2_y3pti"]
 [ext_resource type="PackedScene" uid="uid://cwuwf3ya0bg7e" path="res://game_over.tscn" id="4_qqaft"]
+[ext_resource type="PackedScene" uid="uid://3ls7738v7yh" path="res://ui.tscn" id="5_7jj1j"]
 
 [sub_resource type="Curve2D" id="Curve2D_qqaft"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -415, -885, 0, 0, 0, 0, 2350, -892, 0, 0, 0, 0, 2342, 1307, 0, 0, 0, 0, -444, 1336, 0, 0, 0, 0, -415, -885)
 }
 point_count = 5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mfeji"]
+normal = Vector2(1, 0)
+distance = -474.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c5gk5"]
+distance = -1845.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_htm8n"]
+normal = Vector2(0, 1)
+distance = -571.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ldn2m"]
+normal = Vector2(-1, 0)
+distance = -2420.0
 
 [node name="Game" type="Node2D" unique_id=1017357624]
 y_sort_enabled = true
@@ -19,11 +35,17 @@ script = ExtResource("1_l26od")
 layer = -30
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=89297711]
-offset_right = 1928.0
-offset_bottom = 1072.0
+offset_right = 1956.0
+offset_bottom = 1119.0
 
 [node name="Player" parent="." unique_id=217721967 instance=ExtResource("1_y3pti")]
 position = Vector2(981, 576)
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=961357101]
+limit_left = -476
+limit_top = -573
+limit_right = 2420
+limit_bottom = 1845
 
 [node name="Path2D" type="Path2D" parent="Player" unique_id=497117415]
 position = Vector2(-981, -196)
@@ -33,6 +55,30 @@ curve = SubResource("Curve2D_qqaft")
 unique_name_in_owner = true
 position = Vector2(-415, -885)
 rotation = -0.00253164
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1772103878]
+
+[node name="LeftBoundary" type="CollisionShape2D" parent="Area2D" unique_id=1561914725]
+shape = SubResource("WorldBoundaryShape2D_mfeji")
+
+[node name="LowerBoundary" type="CollisionShape2D" parent="Area2D" unique_id=1465296935]
+position = Vector2(90, -5)
+shape = SubResource("WorldBoundaryShape2D_c5gk5")
+debug_color = Color(0.5360783, 0.56933385, 7.70092e-07, 0.41960785)
+
+[node name="UpperBoundary" type="CollisionShape2D" parent="Area2D" unique_id=637384665]
+shape = SubResource("WorldBoundaryShape2D_htm8n")
+
+[node name="RightBoundary" type="CollisionShape2D" parent="Area2D" unique_id=1924859079]
+shape = SubResource("WorldBoundaryShape2D_ldn2m")
+
+[node name="Timer" type="Timer" parent="." unique_id=1831963426]
+autostart = true
+
+[node name="GameOver" parent="." unique_id=1014575362 instance=ExtResource("4_qqaft")]
+visible = false
+
+[node name="UI" parent="." unique_id=324021230 instance=ExtResource("5_7jj1j")]
 
 [node name="StaticBody2D" parent="." unique_id=1504136900 instance=ExtResource("2_y3pti")]
 position = Vector2(591, 790)
@@ -58,12 +104,77 @@ position = Vector2(183, 871)
 [node name="StaticBody2D8" parent="." unique_id=207221397 instance=ExtResource("2_y3pti")]
 position = Vector2(1727, 305)
 
-[node name="Timer" type="Timer" parent="." unique_id=1831963426]
-wait_time = 0.5
-autostart = true
+[node name="StaticBody2D9" parent="." unique_id=753115554 instance=ExtResource("2_y3pti")]
+position = Vector2(4, 521)
 
-[node name="GameOver" parent="." unique_id=1014575362 instance=ExtResource("4_qqaft")]
-visible = false
+[node name="StaticBody2D10" parent="." unique_id=2057963503 instance=ExtResource("2_y3pti")]
+position = Vector2(-250, 170)
+
+[node name="StaticBody2D11" parent="." unique_id=1425009403 instance=ExtResource("2_y3pti")]
+position = Vector2(-271, 906)
+
+[node name="StaticBody2D12" parent="." unique_id=1936397395 instance=ExtResource("2_y3pti")]
+position = Vector2(-58, 1386)
+
+[node name="StaticBody2D13" parent="." unique_id=982216724 instance=ExtResource("2_y3pti")]
+position = Vector2(531, 1265)
+
+[node name="StaticBody2D14" parent="." unique_id=1047519251 instance=ExtResource("2_y3pti")]
+position = Vector2(313, 1561)
+
+[node name="StaticBody2D15" parent="." unique_id=546986815 instance=ExtResource("2_y3pti")]
+position = Vector2(852, 1503)
+
+[node name="StaticBody2D16" parent="." unique_id=1272644449 instance=ExtResource("2_y3pti")]
+position = Vector2(894, 1089)
+
+[node name="StaticBody2D17" parent="." unique_id=1314335520 instance=ExtResource("2_y3pti")]
+position = Vector2(1287, 1336)
+
+[node name="StaticBody2D18" parent="." unique_id=1156457490 instance=ExtResource("2_y3pti")]
+position = Vector2(-138, -176)
+
+[node name="StaticBody2D19" parent="." unique_id=1211223235 instance=ExtResource("2_y3pti")]
+position = Vector2(351, -147)
+
+[node name="StaticBody2D20" parent="." unique_id=808705472 instance=ExtResource("2_y3pti")]
+position = Vector2(840, -218)
+
+[node name="StaticBody2D21" parent="." unique_id=1764184214 instance=ExtResource("2_y3pti")]
+position = Vector2(953, 104)
+
+[node name="StaticBody2D22" parent="." unique_id=1827006126 instance=ExtResource("2_y3pti")]
+position = Vector2(1324, -193)
+
+[node name="StaticBody2D23" parent="." unique_id=1680092833 instance=ExtResource("2_y3pti")]
+position = Vector2(1688, -281)
+
+[node name="StaticBody2D24" parent="." unique_id=1274778624 instance=ExtResource("2_y3pti")]
+position = Vector2(1604, 7)
+
+[node name="StaticBody2D25" parent="." unique_id=519176701 instance=ExtResource("2_y3pti")]
+position = Vector2(2114, -185)
+
+[node name="StaticBody2D26" parent="." unique_id=365635574 instance=ExtResource("2_y3pti")]
+position = Vector2(2043, 408)
+
+[node name="StaticBody2D27" parent="." unique_id=1094955278 instance=ExtResource("2_y3pti")]
+position = Vector2(2185, 830)
+
+[node name="StaticBody2D28" parent="." unique_id=1241773882 instance=ExtResource("2_y3pti")]
+position = Vector2(1659, 1018)
+
+[node name="StaticBody2D29" parent="." unique_id=213380049 instance=ExtResource("2_y3pti")]
+position = Vector2(1537, 1524)
+
+[node name="StaticBody2D30" parent="." unique_id=1061045385 instance=ExtResource("2_y3pti")]
+position = Vector2(1813, 1357)
+
+[node name="StaticBody2D31" parent="." unique_id=1754971572 instance=ExtResource("2_y3pti")]
+position = Vector2(2151, 1361)
+
+[node name="StaticBody2D32" parent="." unique_id=998595277 instance=ExtResource("2_y3pti")]
+position = Vector2(-301, 1561)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+var coins
+
 func _ready():
 	spawn_mob()
 	spawn_mob()

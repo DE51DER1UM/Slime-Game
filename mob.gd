@@ -23,9 +23,22 @@ func take_damage():
 	if health == 0:
 		queue_free()
 		
-		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
-		var smoke = SMOKE_SCENE.instantiate()
-		get_parent().add_child(smoke)
-		smoke.global_position = global_position
+		smoke_effect()
 		
-		
+		item_drop()
+
+func smoke_effect():
+	const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
+	var smoke = SMOKE_SCENE.instantiate()
+	get_parent().add_child(smoke)
+	smoke.global_position = global_position
+
+func item_drop():
+	randomize()
+	var prob : int = 4
+	if (randi() % prob) == (prob - 1):
+		const COIN_SCENE = preload("res://coin.tscn")
+		var coin = COIN_SCENE.instantiate()
+		get_parent().add_child(coin)
+		coin.global_position = global_position
+	

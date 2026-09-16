@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://3ls7738v7yh"]
+
+[ext_resource type="Script" uid="uid://nlhd2c63q3ra" path="res://ui.gd" id="1_fyqef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyqef"]
+bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
+bg_color = Color(0.3882353, 0.8, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UI" type="CanvasLayer" unique_id=1091219773]
+script = ExtResource("1_fyqef")
+
+[node name="CoinsValue" type="Label" parent="." unique_id=1795111115]
+unique_name_in_owner = true
+offset_left = 67.0
+offset_top = 903.0
+offset_right = 400.0
+offset_bottom = 1030.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Coins: 0"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=844305615]
+unique_name_in_owner = true
+offset_left = 41.0
+offset_top = 39.0
+offset_right = 619.0
+offset_bottom = 108.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fyqef")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m6e0p")
+value = 100.0
+show_percentage = false
