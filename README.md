@@ -16,3 +16,4 @@ Week 2 Changes (~2 hours?):
 
 Week 3 Changes (~6 hours):
 - Slimes now have a chance to drop coins that the player can pick up
+- Every time the player kills a slime their score goes up by 1
