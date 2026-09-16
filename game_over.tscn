@@ -17,19 +17,33 @@ color = Color(0, 0, 0, 0.5686275)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1668945132]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -11.5
-offset_right = 43.5
-offset_bottom = 11.5
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = 247.0
+offset_right = 434.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 160
 text = "Game Over"
+
+[node name="ScoreLabel" type="Label" parent="ColorRect" unique_id=1046467823]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = 489.0
+offset_right = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Score: 0"
 
 [node name="Button" type="Button" parent="." unique_id=2047372219]
 anchors_preset = 8

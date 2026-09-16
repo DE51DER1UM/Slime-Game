@@ -7,7 +7,7 @@ var health = 3
 func _ready():
 	%Slime.play_walk()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 300.0
 	move_and_slide()
@@ -26,6 +26,9 @@ func take_damage():
 		smoke_effect()
 		
 		item_drop()
+		
+		Gamemanager.score = Gamemanager.score + 1
+		print_debug("Score: ", Gamemanager.score)
 
 func smoke_effect():
 	const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")

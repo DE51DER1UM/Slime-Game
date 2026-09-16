@@ -2,12 +2,19 @@
 
 [ext_resource type="Script" uid="uid://begyrc5d08rmi" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://dbbuo6ldgfgbb" path="res://misc assets/coin.png" id="1_d5gmh"]
+[ext_resource type="Texture2D" uid="uid://dk5b8a84a6n2h" path="res://characters/ground_shadow.png" id="2_v7riw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5gk5"]
 radius = 26.172504
 
 [node name="Coin" type="Area2D" unique_id=570375446]
 script = ExtResource("1_0t63x")
+
+[node name="GroundShadow" type="Sprite2D" parent="." unique_id=1789769478]
+modulate = Color(0.8980392, 0.8784314, 0.83137256, 1)
+position = Vector2(1.9073486e-06, 18.999998)
+scale = Vector2(0.5576923, 0.5576923)
+texture = ExtResource("2_v7riw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1095109716]
 scale = Vector2(0.023050342, 0.023050345)
