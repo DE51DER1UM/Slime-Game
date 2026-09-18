@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vk50tubkjkm1" path="res://pinetree.tscn" id="2_y3pti"]
 [ext_resource type="PackedScene" uid="uid://cwuwf3ya0bg7e" path="res://game_over.tscn" id="4_qqaft"]
 [ext_resource type="PackedScene" uid="uid://3ls7738v7yh" path="res://ui.tscn" id="5_7jj1j"]
+[ext_resource type="PackedScene" uid="uid://be66etd7hfowo" path="res://shop.tscn" id="5_edxvn"]
 
 [sub_resource type="Curve2D" id="Curve2D_qqaft"]
 _data = {
@@ -79,6 +80,8 @@ autostart = true
 visible = false
 
 [node name="UI" parent="." unique_id=324021230 instance=ExtResource("5_7jj1j")]
+
+[node name="Shop" parent="." unique_id=986854795 instance=ExtResource("5_edxvn")]
 
 [node name="StaticBody2D" parent="." unique_id=1504136900 instance=ExtResource("2_y3pti")]
 position = Vector2(591, 790)

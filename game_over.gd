@@ -1,7 +1,10 @@
 extends CanvasLayer
 
 func _process(_delta) -> void:
+	if Gamemanager.score > Gamemanager.highscore:
+		Gamemanager.highscore = Gamemanager.score
 	%ScoreLabel.text = "Score: " + str(Gamemanager.score)
+	%HighScoreLabel.text = "Highscore: " + str(Gamemanager.highscore)
 
 func _on_button_pressed() -> void:
 	get_tree().paused = false

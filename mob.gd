@@ -13,14 +13,16 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func take_damage():
-	health -= 1
+	health = health - Gamemanager.gun_damage
 	%Slime.play_hurt()
 	const IMPACT_SCENE = preload("res://pistol/impact/impact.tscn")
 	var impact = IMPACT_SCENE.instantiate()
 	get_parent().add_child(impact)
 	impact.global_position = global_position
 	
-	if health == 0:
+	if health <= 0:
+		%Slime.play_hurt()
+		
 		queue_free()
 		
 		smoke_effect()
@@ -28,7 +30,6 @@ func take_damage():
 		item_drop()
 		
 		Gamemanager.score = Gamemanager.score + 1
-		print_debug("Score: ", Gamemanager.score)
 
 func smoke_effect():
 	const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")

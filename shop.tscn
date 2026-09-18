@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://be66etd7hfowo"]
+
+[ext_resource type="Script" uid="uid://bi1u24lly7mw5" path="res://shop.gd" id="1_viryw"]
+
+[node name="Shop" type="CanvasLayer" unique_id=986854795]
+script = ExtResource("1_viryw")
+
+[node name="Shop" type="Label" parent="." unique_id=1601200931]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1368.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBuy" type="Button" parent="." unique_id=925131915]
+unique_name_in_owner = true
+offset_left = 1425.0
+offset_top = 132.0
+offset_right = 1626.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Health
+Cost: 5"
+
+[node name="GunUpgradeBuy" type="Button" parent="." unique_id=1696733444]
+unique_name_in_owner = true
+offset_left = 1658.0
+offset_top = 134.0
+offset_right = 1862.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gun
+Upgrade
+Cost: 10"
+text_overrun_behavior = 1
+
+[node name="SpeedUpgradeBuy" type="Button" parent="." unique_id=848829241]
+unique_name_in_owner = true
+offset_left = 1426.0
+offset_top = 318.0
+offset_right = 1627.0
+offset_bottom = 469.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Speed
+Upgrade
+Cost: 15"
+
+[node name="HealthUpgradeBuy" type="Button" parent="." unique_id=197010212]
+unique_name_in_owner = true
+offset_left = 1659.0
+offset_top = 318.0
+offset_right = 1863.0
+offset_bottom = 469.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Health
+Upgrade
+Cost: 20"
+text_overrun_behavior = 1
+
+[connection signal="pressed" from="HealthBuy" to="." method="_on_health_buy_pressed"]
+[connection signal="pressed" from="GunUpgradeBuy" to="." method="_on_gun_upgrade_buy_pressed"]
+[connection signal="pressed" from="SpeedUpgradeBuy" to="." method="_on_speed_upgrade_buy_pressed"]
+[connection signal="pressed" from="HealthUpgradeBuy" to="." method="_on_health_upgrade_buy_pressed"]
