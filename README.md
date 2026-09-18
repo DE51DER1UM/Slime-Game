@@ -14,6 +14,7 @@ Week 2 Changes (~2 hours?):
 - Added a restart button to the game over screen
 
 
-Week 3 Changes (~6 hours):
+Week 3 Changes (~9 hours):
 - Slimes now have a chance to drop coins that the player can pick up
 - Every time the player kills a slime their score goes up by 1
+- Added a shop where the player can buy health and upgrades to gun damage, speed, and max health. Player uses the coins to buy these things, and can only buy them a limited number of times
