@@ -9,6 +9,10 @@ func _ready():
 	spawn_mob()
 	spawn_mob()
 
+func _on_shop_shop_buy() -> void:
+	%Timer.wait_time = %Timer.wait_time - 0.1
+	print_debug(%Timer.wait_time)
+
 func spawn_mob():
 	var new_mob = preload("res://mob.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
@@ -18,7 +22,6 @@ func spawn_mob():
 
 func _on_timer_timeout() -> void:
 	spawn_mob()
-
 
 func _on_player_health_depleted() -> void:
 	$GameOver.visible = true

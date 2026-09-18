@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal shop_buy
+
 var health_cost = 1
 var gunup_cost = 1
 var speedup_cost = 1
@@ -63,15 +65,22 @@ func _on_gun_upgrade_buy_pressed() -> void:
 	Gamemanager.coins = Gamemanager.coins - gunup_cost
 	Gamemanager.gun_damage = Gamemanager.gun_damage + gunup_add
 	gun_track = gun_track + 1
+	shop_buy.emit()
+	print_debug(shop_buy)
 
 
 func _on_speed_upgrade_buy_pressed() -> void:
 	Gamemanager.coins = Gamemanager.coins - speedup_cost
 	Gamemanager.speed = Gamemanager.speed + speedup_add
 	speed_track = speed_track + 1
-
+	shop_buy.emit()
 
 func _on_health_upgrade_buy_pressed() -> void:
 	Gamemanager.coins = Gamemanager.coins - healthup_cost
 	Gamemanager.maxhealth = Gamemanager.maxhealth + healthup_add
 	health_track = health_track + 1
+	shop_buy.emit()
+
+
+func _on_shop_buy() -> void:
+	pass # Replace with function body.

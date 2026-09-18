@@ -74,6 +74,7 @@ shape = SubResource("WorldBoundaryShape2D_htm8n")
 shape = SubResource("WorldBoundaryShape2D_ldn2m")
 
 [node name="Timer" type="Timer" parent="." unique_id=1831963426]
+unique_name_in_owner = true
 autostart = true
 
 [node name="GameOver" parent="." unique_id=1014575362 instance=ExtResource("4_qqaft")]
@@ -181,3 +182,4 @@ position = Vector2(-301, 1561)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="shop_buy" from="Shop" to="." method="_on_shop_shop_buy"]
