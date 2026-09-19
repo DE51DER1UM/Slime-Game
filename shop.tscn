@@ -26,7 +26,7 @@ offset_bottom = 283.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Health
-Cost: 5"
+Cost: 3"
 
 [node name="GunUpgradeBuy" type="Button" parent="." unique_id=1696733444]
 unique_name_in_owner = true
@@ -38,7 +38,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Gun
 Upgrade
-Cost: 10"
+Cost: 6"
 text_overrun_behavior = 1
 
 [node name="SpeedUpgradeBuy" type="Button" parent="." unique_id=848829241]
@@ -51,7 +51,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Speed
 Upgrade
-Cost: 15"
+Cost: 12"
 
 [node name="HealthUpgradeBuy" type="Button" parent="." unique_id=197010212]
 unique_name_in_owner = true
@@ -63,7 +63,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Health
 Upgrade
-Cost: 20"
+Cost: 18"
 text_overrun_behavior = 1
 
 [connection signal="pressed" from="HealthBuy" to="." method="_on_health_buy_pressed"]

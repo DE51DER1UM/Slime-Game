@@ -11,6 +11,8 @@ func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
 	Gamemanager.score = 0
 	Gamemanager.coins = 0
-	Gamemanager.total_coins = 0
 	Gamemanager.health = 100.0
+	Gamemanager.maxhealth = 100.0
+	Gamemanager.speed = 600.0
+	Gamemanager.gun_damage = 1
 	hide()

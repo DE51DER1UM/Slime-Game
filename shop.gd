@@ -2,10 +2,10 @@ extends CanvasLayer
 
 signal shop_buy
 
-var health_cost = 5
-var gunup_cost = 10
-var speedup_cost = 15
-var healthup_cost = 20
+var health_cost = 3
+var gunup_cost = 6
+var speedup_cost = 12
+var healthup_cost = 18
 
 var health_add = 20
 var gunup_add = 1
